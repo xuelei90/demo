@@ -1,2 +1,2 @@
 # demo
-third library demos
+my demos
