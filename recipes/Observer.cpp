@@ -33,7 +33,7 @@ public:
     for (int i = 0; i < m_observers.size(); ++i)
     {
       Observer *x = m_observers[i];
-      if (x)
+      if (x) //not thread-safe
       {
         x->Update();
       }
@@ -45,6 +45,7 @@ private:
 
 void Observer::Observe(Observable *s)
 {
+  //If this pointer show in construct function, it's not thread safe. 
   s->Register(this);
 }
 
